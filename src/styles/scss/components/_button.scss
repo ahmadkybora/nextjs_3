@@ -1,0 +1,21 @@
+@import "./vars";
+
+.button {
+    &:hover {
+        background-color: rgb(126, 218, 12);
+        border: $borderDark;
+        cursor: pointer;
+    }
+    &:active {
+        box-shadow:
+        inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    }
+    background-color: rgb(126, 218, 126);
+    width: 100px;
+    height: 35px;
+    border: $borderLight;
+    border-radius: 5px;
+    margin: 1%;
+    align-self: self-start;
+}

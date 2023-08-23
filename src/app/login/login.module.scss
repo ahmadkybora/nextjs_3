@@ -1,0 +1,17 @@
+@import "../../styles/scss/vars";
+@import "../../styles/scss/components/_container.scss";
+@import "../../styles/scss/components/_input.scss";
+@import "../../styles/scss/components/_button.scss";
+
+.loginContainer {
+    background-color: rgb(156, 204, 156);
+    border: $borderLight;
+    border-radius: 5px;
+    width: 35%;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+}
