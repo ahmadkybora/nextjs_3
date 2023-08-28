@@ -1,10 +1,18 @@
 @import "./vars";
 
 .input {
-    width: 97%;
-    height: 27px;
-    border-radius: 5px;
+    &:focus {
+        border: $purpleLight solid 3px;
+        outline: none;
+        box-shadow:
+        inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    };
+    width: 75%;
+    height: 35px;
+    border-radius: 20px;
     background-color: $white;
-    border: gray solid 1px;
-    margin: 1%;
+    border: $white solid 1px;
+    margin: 2%;
+    align-self: center;
 }

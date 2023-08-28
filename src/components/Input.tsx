@@ -16,6 +16,7 @@ const Input = ({ style, type, name }: ComponentTypes) => {
             className={style}
             type={type}
             name={name}
+            placeholder={name}
             onChange={handleChange(name)}
             />
     )

@@ -2,20 +2,33 @@
 
 .button {
     &:hover {
-        background-color: rgb(126, 218, 12);
-        border: $borderDark;
+        border: $purpleLight solid 3px;
+        outline: none;
+        background-color: $white;
         cursor: pointer;
     }
     &:active {
+        border: $purpleLight solid 3px;
+        outline: none;
         box-shadow:
         inset -2px -2px 3px rgba(255, 255, 255, 0.6),
         inset 2px 2px 3px rgba(0, 0, 0, 0.6);
     }
-    background-color: rgb(126, 218, 126);
+    background-color: $purpleLight;
     width: 100px;
     height: 35px;
     border: $borderLight;
-    border-radius: 5px;
+    border-radius: 20px;
     margin: 1%;
     align-self: self-start;
+}
+
+.buttonSmall {
+    width: 50px;
+    padding: .5% .5%;
+}
+
+.buttonMedium {
+    width: 150px;
+    padding: 1% 3%;
 }

@@ -1,10 +1,5 @@
 import PropTypes, { InferProps } from "prop-types";
 
-interface IPropTypes {
-    style: string,
-    children: any
-}
-
 const ComponentPropTypes = {
     children: PropTypes.any,
     style: PropTypes.string.isRequired,

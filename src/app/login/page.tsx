@@ -1,7 +1,7 @@
 "use client";
 
 import loginStyles from "./login.module.scss";
-import { Input, Div, SubmitButton } from "@/components";
+import { Input, Container, SubmitButton, Label } from "@/components";
 import { Formik, Form, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 import AuthServices from "@/services/auth.services";
@@ -9,15 +9,15 @@ import AuthServices from "@/services/auth.services";
 const Login = () => {
     interface Style {
         loginContainer?: string;
-        container?: string;
         input?: string;
-        button?: string;
-    }
+        loginBtn?: string;
+        loginForm?: string;
+    };
     interface IUser {
         password: string;
         username: string;
-    }
-    const { loginContainer, container, input, button }: Style = loginStyles;
+    };
+    const { loginForm, loginContainer, input, loginBtn }: Style = loginStyles;
     const initialValues: IUser = {
         password: "",
         username: "",
@@ -30,11 +30,12 @@ const Login = () => {
         AuthServices.login(payload).then((res) => {
             console.log(res);
         });
-    }
+    };
     return(
         <div>
-            <Div style={container}>
-                <Div style={loginContainer}>
+            <Container style={loginContainer}>
+                <Container style={loginForm}>
+                    <Label title="Login" />
                     <Formik 
                         initialValues={initialValues}
                         validationSchema={validationSchema}
@@ -45,25 +46,25 @@ const Login = () => {
                                     style={input}
                                     name="username"
                                     />
-                                <span style={{ color: "red" }}>
-                                    <ErrorMessage name="username" component="div" />
+                                <span style={{ color: "red", paddingLeft: "10px" }}>
+                                    <ErrorMessage name="username" />
                                 </span>
                                 <Input
                                     type="password"
                                     style={input}
                                     name="password"
                                     />
-                                <span style={{ color: "red" }}>
-                                    <ErrorMessage name="password" component="div" />
+                                <span style={{ color: "red", paddingLeft: "10px" }}>
+                                    <ErrorMessage name="password" />
                                 </span>
-                                <SubmitButton 
+                                <SubmitButton
                                     title="Login"
-                                    style={button}
+                                    style={loginBtn}
                                     />
                             </Form>
                     </Formik>
-                </Div>
-            </Div>
+                </Container>
+            </Container>
         </div>
     );
 }
