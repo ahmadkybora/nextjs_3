@@ -1,4 +1,6 @@
 import PropTypes, { InferProps } from "prop-types";
+import { useFormikContext } from "formik";
+import React from 'react';
 
 const ComponentPropTypes = {
     title: PropTypes.string.isRequired,
@@ -8,14 +10,16 @@ const ComponentPropTypes = {
 type ComponentTypes = InferProps<typeof ComponentPropTypes>;
 
 const SubmitButton = ({ title, style }: ComponentTypes ) => {
+    const { handleSubmit } = useFormikContext();
     return (
         <button 
             type="submit" 
-            className={style}>
+            className={style}
+            onClick={() => handleSubmit()}>
                 {title}
         </button>
-    )
-}
+    );
+};
 
 SubmitButton.propTypes = ComponentPropTypes;
 

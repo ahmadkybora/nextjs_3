@@ -30,8 +30,6 @@
 }
 
 .loginBtn {
-    @extend .button, .buttonMedium;
-    align-items: center;
+    @extend .button, .buttonLarge;
     background-color: $white;
-    margin: 0 2% 0 2%;
 }

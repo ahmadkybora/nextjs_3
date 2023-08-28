@@ -1,8 +1,7 @@
 "use client";
 
 import loginStyles from "./login.module.scss";
-import { Input, Container, SubmitButton, Label } from "@/components";
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Input, Form, Container, SubmitButton, Label } from "@/components";
 import * as Yup from "yup";
 import AuthServices from "@/services/auth.services";
 
@@ -18,7 +17,7 @@ const Login = () => {
         username: string;
     };
     const { loginForm, loginContainer, input, loginBtn }: Style = loginStyles;
-    const initialValues: IUser = {
+    const initialValues = {
         password: "",
         username: "",
     };
@@ -27,6 +26,7 @@ const Login = () => {
         username: Yup.string().required("username is required")
     });
     const handleSubmit = (payload: IUser) => {
+        console.log(payload);
         AuthServices.login(payload).then((res) => {
             console.log(res);
         });
@@ -36,33 +36,25 @@ const Login = () => {
             <Container style={loginContainer}>
                 <Container style={loginForm}>
                     <Label title="Login" />
-                    <Formik 
+                    <Form
                         initialValues={initialValues}
                         validationSchema={validationSchema}
                         onSubmit={handleSubmit}>
-                            <Form>
-                                <Input 
-                                    type="name"
-                                    style={input}
-                                    name="username"
-                                    />
-                                <span style={{ color: "red", paddingLeft: "10px" }}>
-                                    <ErrorMessage name="username" />
-                                </span>
-                                <Input
-                                    type="password"
-                                    style={input}
-                                    name="password"
-                                    />
-                                <span style={{ color: "red", paddingLeft: "10px" }}>
-                                    <ErrorMessage name="password" />
-                                </span>
-                                <SubmitButton
-                                    title="Login"
-                                    style={loginBtn}
-                                    />
-                            </Form>
-                    </Formik>
+                        <Input 
+                            type="name"
+                            style={input}
+                            name="username"
+                            />
+                        <Input
+                            type="password"
+                            style={input}
+                            name="password"
+                            />
+                        <SubmitButton
+                            title="Login"
+                            style={loginBtn}
+                            />
+                    </Form>
                 </Container>
             </Container>
         </div>

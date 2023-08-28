@@ -9,8 +9,8 @@ type ComponentTypes = InferProps<typeof ComponentPropTypes>;
 const Label = ({ title }: ComponentTypes) => {
     return(
         <label>{title}</label>
-    )
-}
+    );
+};
 
 Label.propTypes = ComponentPropTypes;
 
