@@ -2,19 +2,16 @@
 
 import loginStyles from "./login.module.scss";
 import { Input, Form, Container, SubmitButton, Label } from "@/components";
-import * as Yup from "yup";
 import AuthServices from "@/services/auth.services";
+import * as Yup from "yup";
+import { IUser } from "./login.type";
 
-const Login = () => {
+const Page = () => {
     interface Style {
         loginContainer?: string;
         input?: string;
         loginBtn?: string;
         loginForm?: string;
-    };
-    interface IUser {
-        password: string;
-        username: string;
     };
     const { loginForm, loginContainer, input, loginBtn }: Style = loginStyles;
     const initialValues = {
@@ -26,9 +23,10 @@ const Login = () => {
         username: Yup.string().required("username is required")
     });
     const handleSubmit = (payload: IUser) => {
-        console.log(payload);
         AuthServices.login(payload).then((res) => {
-            console.log(res);
+            console.log(res)
+        }).catch((err) => {
+            console.log(err)
         });
     };
     return(
@@ -61,4 +59,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default Page;

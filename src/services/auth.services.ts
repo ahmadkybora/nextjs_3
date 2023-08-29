@@ -1,14 +1,16 @@
-import Http from "./http.service";
-
-interface IUser {
-    password: string;
-    username: string;
-}
+import { httpService } from "./http.service";
+import { IUser } from "@/app/login/login.type";
 
 class AuthServices {
+    public static LoginUrl: string = "api/auth/login";
+
     public static async login(payload: IUser)
     {
-        await Http.post(Http.baseUrl + "/api/auth/login", payload);
+        return await httpService(AuthServices.LoginUrl,
+            {
+                method: "POST",
+                body: JSON.stringify(payload)
+            });
     }
 }
 

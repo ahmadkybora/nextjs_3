@@ -8,7 +8,7 @@ export async function POST(req: Request) {
     data
     },
     { 
-      status: 200 
+      status: 200
     });
 }
 
