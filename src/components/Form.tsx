@@ -3,8 +3,8 @@ import PropTypes, { InferProps } from "prop-types";
 
 const ComponentPropTypes = {
     children: PropTypes.array,
-    initialValues: PropTypes.object,
-    onSubmit: PropTypes.func,
+    initialValues: PropTypes.any,
+    onSubmit: PropTypes.any,
     validationSchema: PropTypes.object
 };
 

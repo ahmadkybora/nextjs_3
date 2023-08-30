@@ -2,7 +2,7 @@
 
 import loginStyles from "./login.module.scss";
 import { Input, Form, Container, SubmitButton, Label } from "@/components";
-import AuthServices from "@/services/auth.services";
+import AuthServices from "@/services/authServices";
 import * as Yup from "yup";
 import { IUser } from "./login.type";
 

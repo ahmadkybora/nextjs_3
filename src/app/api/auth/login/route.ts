@@ -1,5 +1,14 @@
-import { NextResponse } from "next/server";
 import AuthController from "@/server/controllers/auth/auth.controller";
+import { NextResponse } from "next/server";
+
+export async function GET() {
+  return NextResponse.json({
+    message: "is get method"
+    },
+    { 
+      status: 200 
+    });
+}
 
 export async function POST(req: Request) {
   const { username, password } = await req.json();
@@ -9,14 +18,5 @@ export async function POST(req: Request) {
     },
     { 
       status: 200
-    });
-}
-
-export async function GET() {
-  return NextResponse.json({
-    message: "is get method"
-    },
-    { 
-      status: 200 
     });
 }

@@ -1,6 +1,5 @@
 import PropTypes, { InferProps } from "prop-types";
 import { useFormikContext } from "formik";
-import React from 'react';
 
 const ComponentPropTypes = {
     title: PropTypes.string.isRequired,
