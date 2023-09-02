@@ -5,8 +5,11 @@ import { Input, Form, Container, SubmitButton, Label } from "@/components";
 import AuthServices from "@/services/authServices";
 import * as Yup from "yup";
 import { IUser } from "./login.type";
+import { success } from "@/providers/exceptionHandler";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+    const router = useRouter();
     interface Style {
         loginContainer?: string;
         input?: string;
@@ -23,8 +26,12 @@ const Page = () => {
         username: Yup.string().required("username is required")
     });
     const handleSubmit = (payload: IUser) => {
-        AuthServices.login(payload).then((res) => {
-            console.log(res)
+        AuthServices.login(payload)
+            .then((res) => {
+            success(res);
+            setTimeout(() => {
+                router.push("/");
+            },1000);
         }).catch((err) => {
             console.log(err)
         });

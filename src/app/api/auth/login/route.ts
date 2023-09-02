@@ -1,4 +1,3 @@
-import AuthController from "@/server/controllers/auth/auth.controller";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -11,10 +10,8 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  const { username, password } = await req.json();
-  const data = AuthController.get();
   return NextResponse.json({
-    data
+    message: "you are logged in"
     },
     { 
       status: 200
