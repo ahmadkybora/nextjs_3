@@ -1,9 +1,10 @@
 @import "../vars";
 
 .container {
-    background-color: rgb(210, 153, 238);
-    width: 100vw;
-    height: 100vh;
+    background-color: $white;
+    width: $width100vw;
+    height: $height100vh;
+    margin: 0px;
     display: flex;
     align-items: center;
     justify-content: center;

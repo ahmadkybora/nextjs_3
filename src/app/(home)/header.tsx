@@ -5,13 +5,15 @@ import headerStyles from "./home.module.scss";
 
 const Header = () => {
     interface Styles {
+        containerLogoHamburgerMenu?: string;
         header?: string;
     }
-    const { header }: Styles = headerStyles;
+    const { containerLogoHamburgerMenu, header }: Styles = headerStyles;
     return(
         <>
             <Container style={header}>
-                salam
+                <Container style={containerLogoHamburgerMenu}>
+                </Container>
             </Container>
         </>
     );

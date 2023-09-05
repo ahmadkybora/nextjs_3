@@ -1,8 +1,14 @@
 @import "../components/_container.scss";
+@import "../vars";
 
 .header {
     @extend .container;
-    height: 10vh;
+    height: $height10vh;
     box-shadow: 5px 5px 10px;
-    margin: 0px;
+}
+
+.containerLogoHamburgerMenu {
+    @extend .container;
+    height: $height10vh;
+    justify-content: space-around;
 }
