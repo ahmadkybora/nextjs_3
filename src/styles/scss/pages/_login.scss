@@ -1,5 +1,4 @@
 @import "../vars";
-@import "../components/_container.scss";
 @import "../components/_input.scss";
 @import "../components/_button.scss";
 
@@ -7,9 +6,7 @@
     background-image: url("../../../../public/images/login/login.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: auto;
-    max-width: 100%;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;

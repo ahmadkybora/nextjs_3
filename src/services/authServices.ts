@@ -1,5 +1,5 @@
 import { httpService } from "./httpService";
-import { IUser } from "@/app/login/login.type";
+import { IUser } from "@/app/(auth)/login/login.type";
 
 class AuthServices {
     public static LoginUrl: string = "api/auth/login";

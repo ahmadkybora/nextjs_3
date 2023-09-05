@@ -37,7 +37,7 @@ const Page = () => {
         });
     };
     return(
-        <div>
+        <>
             <Container style={loginContainer}>
                 <Container style={loginForm}>
                     <Label title="Login" />
@@ -62,7 +62,7 @@ const Page = () => {
                     </Form>
                 </Container>
             </Container>
-        </div>
+        </>
     );
 }
 
