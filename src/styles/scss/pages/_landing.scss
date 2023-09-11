@@ -12,3 +12,63 @@
     height: $height10vh;
     justify-content: space-around;
 }
+
+.sidebar {
+    background-color: $white;
+    height: $height100vh;
+    width: $width20vw;
+    border: 1px black solid;
+    button {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: center;
+        border: none;
+        transition: 0.4s;
+    }
+    ul {
+        display: none;
+        list-style: none;
+        margin: auto;
+        padding: 10px;
+        li{
+            &:hover {
+                background-color: silver;
+            }
+            display: inlineBlock; 
+            margin: 2px;
+            padding: 10px;
+            a {
+                text-decoration: none;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// .sidebarUl {
+//     list-style: none;
+//     margin: auto;
+//     padding: 10px;
+//     li{
+//         &:hover {
+//             background-color: silver;
+//         }
+//         display: inlineBlock; 
+//         margin: 2px;
+//         padding: 20px;
+//         border: 1px black solid;
+//     }
+// }
+  
+// .sidebarLi {
+//     &:hover {
+//         background-color: silver;
+//     }
+//     display: inlineBlock; 
+//     margin: 2px;
+//     padding: 20px;
+//     border: 1px black solid;
+// }
