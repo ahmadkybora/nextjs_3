@@ -2,37 +2,41 @@
 
 import { Container } from "@/components";
 import sidebarStyles from "./home.module.scss";
-import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { IconContext } from "react-icons";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const Sidebar = () => {
     interface Styles {
         sidebar?: string;
     }
     const { sidebar }: Styles = sidebarStyles;
-    const ref = useRef<HTMLUListElement>(null);
     const [display, setDisplay] = useState({ display: "none" });
     const setShow = () => {
-        setDisplay({ display: "block" });
+        if(display.display === "none") {
+            setDisplay({ display: "block" });
+        }
+        if(display.display === "block") {
+            setDisplay({ display: "none" });
+        }
     }
     return(
         <>
             <Container style={sidebar}>
                 <button onClick={() => setShow()}>Dashboard 
+                {display.display === "none" ?
                     <IconContext.Provider value={{ style: { marginLeft: "50px"} }}>
                         <IoIosArrowUp />
                     </IconContext.Provider>
+                : 
+                    <IconContext.Provider value={{ style: { marginLeft: "50px"} }}>
+                        <IoIosArrowDown />
+                    </IconContext.Provider>
+                }
                 </button>
                 <ul style={display}>
                     <li>
-                        <a href="#">First item</a>
-                    </li>
-                    <li>
-                        <a href="#">Second item</a>
-                    </li>
-                    <li>
-                        <a href="#">Third item</a>
+                        <a href="#">Commerce</a>
                     </li>
                 </ul>
             </Container>
