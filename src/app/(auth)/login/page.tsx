@@ -8,7 +8,7 @@ import { IUser } from "./login.type";
 import { success } from "@/providers/exceptionHandler";
 import { useRouter } from "next/navigation";
 
-const Page = () => {
+const Login = () => {
     const router = useRouter();
     interface Style {
         loginContainer?: string;
@@ -66,4 +66,4 @@ const Page = () => {
     );
 }
 
-export default Page;
+export default Login;

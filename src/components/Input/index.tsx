@@ -1,6 +1,5 @@
 import PropTypes, { InferProps } from "prop-types";
-import { useFormikContext } from "formik";
-import { ErrorMessage } from 'formik';
+import { useFormikContext, ErrorMessage } from "formik";
 
 const ComponentPropTypes = {
     name: PropTypes.string.isRequired,
