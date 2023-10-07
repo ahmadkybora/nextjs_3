@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "./header";
 import Sidebar from "./sidebar";
 import Footer from "./footer";
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -16,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body style={{ margin: "0px", overflow: "hidden" }}>
+      <body >
         <Header />
           {children}
         <Sidebar />
