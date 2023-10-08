@@ -24,13 +24,16 @@
 }
 
 .buttonSmall {
+    @extend .button;
     width: 25%;
 }
 
 .buttonMedium {
+    @extend .button;
     width: 50%;
 }
 
 .buttonLarge {
+    @extend .button;
     width: 75%;
 }

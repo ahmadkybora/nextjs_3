@@ -1,0 +1,6 @@
+@import "@/styles/scss/components/_button"; 
+
+.defaultBtn {
+    @extend .button, .buttonSmall;
+    background-color: $white;
+}
