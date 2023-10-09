@@ -14,6 +14,13 @@
     box-shadow: 5px 5px 10px;
 }
 
+.containerLogoAvatar {
+    @extend .container;
+    height: $height10vh;
+    width: $width25vw;
+    justify-content: space-around;
+}
+
 .containerSearchBox {
     width: $width50vw;
 }

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+export { default as Avatar } from "./Avatar";
+export { default as SubmitButton } from "./SubmitButton";
+>>>>>>> origin/Feature-Avatar
 export { default as Container } from "./Container";
 export { default as Form } from "./Form";
 export { default as Input } from "./Input";
