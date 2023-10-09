@@ -1,6 +1,5 @@
-@import "../vars";
-@import "../components/_input.scss";
-@import "../components/_button.scss";
+@import "components/_input.scss";
+@import "components/_button.scss";
 
 .loginContainer {
     background-image: url("../../../../public/images/login/login.png");
