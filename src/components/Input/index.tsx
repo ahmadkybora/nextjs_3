@@ -3,18 +3,17 @@ import { useFormikContext, ErrorMessage } from "formik";
 
 const ComponentPropTypes = {
     name: PropTypes.string.isRequired,
-    style: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired
 }
 
 type ComponentTypes = InferProps<typeof ComponentPropTypes>;
 
-const Input = ({ style, type, name }: ComponentTypes) => {
+const Input = ({ type, name }: ComponentTypes) => {
     const { handleChange } = useFormikContext();
     return (
         <>
             <input
-                className={style}
+                className="w-full rounded-full   my-2 h-8"
                 type={type}
                 name={name}
                 placeholder={name}
@@ -26,5 +25,7 @@ const Input = ({ style, type, name }: ComponentTypes) => {
         </>
     );
 };
+
+Input.propTypes = ComponentPropTypes;
 
 export default Input;

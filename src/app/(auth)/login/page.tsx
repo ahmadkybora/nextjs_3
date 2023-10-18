@@ -1,7 +1,6 @@
 "use client";
 
-import loginStyles from "./login.module.scss";
-import { Input, Form, Container, SubmitButton, Label } from "@/components";
+import { Input, Form, SubmitButton, Label } from "@/components";
 import AuthServices from "@/services/authServices";
 import * as Yup from "yup";
 import { IUser } from "./login.type";
@@ -10,13 +9,6 @@ import { useRouter } from "next/navigation";
 
 const Login = () => {
     const router = useRouter();
-    interface Style {
-        loginContainer?: string;
-        input?: string;
-        loginBtn?: string;
-        loginForm?: string;
-    };
-    const { loginForm, loginContainer, input, loginBtn }: Style = loginStyles;
     const initialValues = {
         password: "",
         username: "",
@@ -38,8 +30,8 @@ const Login = () => {
     };
     return(
         <>
-            <Container style={loginContainer}>
-                <Container style={loginForm}>
+            <div className="flex items-center justify-center h-screen bg-no-repeat bg-cover bg-[url('../../public/images/login/login.png')]">
+                <div className="border-solid border-1 w-80 h-80 bg-cyan-600 rounded-lg">
                     <Label title="Login" />
                     <Form
                         initialValues={initialValues}
@@ -47,21 +39,18 @@ const Login = () => {
                         onSubmit={handleSubmit}>
                         <Input 
                             type="name"
-                            style={input}
                             name="username"
                             />
                         <Input
                             type="password"
-                            style={input}
                             name="password"
                             />
                         <SubmitButton
                             title="Login"
-                            style={loginBtn}
                             />
                     </Form>
-                </Container>
-            </Container>
+                </div>
+            </div>
         </>
     );
 }

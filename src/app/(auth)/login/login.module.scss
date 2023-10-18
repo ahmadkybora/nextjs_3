@@ -1,1 +1,31 @@
-@import "@/styles/scss/pages/login";
+@import "components/input.scss";
+@import "components/button.scss";
+
+// .login-container {
+//     background-image: url("../../../../public/images/login/login.png");
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     width: 100vw;
+//     height: 100vh;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+.login-form {
+    background-color: $glassWhite;
+    border: $borderLight;
+    border-radius: 5px;
+    width: 30%;
+    height: 65vh;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginBtn {
+    @extend .button, .buttonLarge;
+    background-color: $white;
+}

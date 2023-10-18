@@ -1,7 +1,6 @@
-import { Container, Form, Input, SubmitButton } from ".";
+import { Form, Input, SubmitButton } from "@/components";
 import PropTypes, { InferProps } from "prop-types";
 import * as Yup from "yup";
-import inputStyle from "./input.module.scss";
 
 const ComponentPropTypes = {
     name: PropTypes.string.isRequired,
@@ -11,10 +10,6 @@ const ComponentPropTypes = {
 type ComponentTypes = InferProps<typeof ComponentPropTypes>;
 
 const SearchBox = ({ name, icon }: ComponentTypes) => {
-    interface Style {
-        input?: string;
-    }
-    const { input }: Style = inputStyle;
     const initialValues = {
         name: "",
     };
@@ -25,15 +20,15 @@ const SearchBox = ({ name, icon }: ComponentTypes) => {
     };
     return(
         <>
-            <Container style="">
+            <div className="flex">
                 <Form
                     initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}>
-                    <Input style={input} type="name" name={name} />
+                        <Input type="name" name={name} />
                         <SubmitButton title={name} icon={icon} />
                     </Form>
-            </Container>
+            </div>
         </>
     )
 }

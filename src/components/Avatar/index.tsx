@@ -8,11 +8,6 @@ const ComponentPropTypes = {
 type ComponentTypes = InferProps<typeof ComponentPropTypes>;
 
 const Avatar = ({ src }: ComponentTypes) => {
-    const imgStyle = {
-        border: "2px silver solid",
-        borderRadius: "50%",
-        margin: "3px 30px"  
-    }
     return(
         <>
             <Image
@@ -21,7 +16,7 @@ const Avatar = ({ src }: ComponentTypes) => {
                 width={50}
                 height={50}
                 alt="Avatar"
-                style={imgStyle}
+                className="border-solid border-2 rounded-full"
                 />
         </>
     );

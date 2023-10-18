@@ -2,7 +2,7 @@ import PropTypes, { InferProps } from "prop-types";
 
 const ComponentPropTypes = {
     children: PropTypes.any,
-    style: PropTypes.string.isRequired,
+    style: PropTypes.string,
 };
 
 type ComponentTypes = InferProps<typeof ComponentPropTypes>;

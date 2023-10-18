@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToastProvider from "@/providers/toastProvider";
+import "../../globals.css";
 
 export const metadata: Metadata = {
   title: "Login",
