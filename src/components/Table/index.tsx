@@ -19,8 +19,8 @@ const Table = ({data, columns}) => {
     return(
         <>
             <div className="relative overflow-x-auto shadow-lg sm:rounded-lg m-2">
-                <table className="w-full text-center text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
+                <table className="w-full text-center text-sm text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                         {tableInstance.getHeaderGroups().map((headerEl) => {
                             return(
                                 <tr key={headerEl.id}>

@@ -19,8 +19,12 @@ export default function RootLayout({
       <head />
       <body >
         <Header />
-          {children}
-        <Sidebar />
+        <div className="border border-solid flex flex-row">
+          <Sidebar />
+          <div className="border border-solid w-full">
+            {children}
+          </div>
+        </div>
         <Footer />
       </body>
     </html>

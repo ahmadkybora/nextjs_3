@@ -13,7 +13,7 @@ const SubmitButton = ({ title, icon }: ComponentTypes ) => {
     return (
         <button 
             type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 flex rounded-full item-center h-8 mt-1"
+            className="text-white bg-blue-700 hover:bg-blue-800 flex flex-row rounded-md items-center h-8 w-24"
             onClick={() => handleSubmit()}>
                 {title}
                 {icon}

@@ -1,15 +1,15 @@
 import { Form, Input, SubmitButton } from "@/components";
 import PropTypes, { InferProps } from "prop-types";
 import * as Yup from "yup";
+import { BiSearch } from "react-icons/bi";
 
 const ComponentPropTypes = {
     name: PropTypes.string.isRequired,
-    icon: PropTypes.object.isRequired,
 };
 
 type ComponentTypes = InferProps<typeof ComponentPropTypes>;
 
-const SearchBox = ({ name, icon }: ComponentTypes) => {
+const SearchBox = ({ name }: ComponentTypes) => {
     const initialValues = {
         name: "",
     };
@@ -20,13 +20,13 @@ const SearchBox = ({ name, icon }: ComponentTypes) => {
     };
     return(
         <>
-            <div className="flex">
+            <div className="flex flex-row items-center">
                 <Form
                     initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}>
                         <Input type="name" name={name} />
-                        <SubmitButton title={name} icon={icon} />
+                        <SubmitButton title={name} icon={<BiSearch size={20} />} />
                     </Form>
             </div>
         </>

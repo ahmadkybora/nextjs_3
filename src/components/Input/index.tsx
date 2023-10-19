@@ -13,7 +13,7 @@ const Input = ({ type, name }: ComponentTypes) => {
     return (
         <>
             <input
-                className="w-full rounded-full   my-2 h-8"
+                className="w-full rounded-full my-2 h-8"
                 type={type}
                 name={name}
                 placeholder={name}
